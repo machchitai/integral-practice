@@ -102,7 +102,7 @@ ${CHANGES}
 
 Regards,
 
-DevOps Team''', subject: '$PROJECT_NAME-#$BUILD_NUMBER-$BUILD_STATUS!', to: 'vdangi@dxc.com, svankayalap2@dxc.com'
+DevOps Team''', subject: '$PROJECT_NAME-#$BUILD_NUMBER-$BUILD_STATUS!', to: 'taichi.mach@dxc.com'
 
 
 
