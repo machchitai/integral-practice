@@ -14,7 +14,7 @@ tools {
 environment {
     Version="R21.2"
 	Branch="RL21.2"
-    CredentialID="machchitai@gmail.com"
+    CredentialID="84737477-d4b4-430c-b041-8d3fa7080f3a"
 	TargetDir="base-release/Group/R21.2/Latest"
 	}
 	
@@ -93,14 +93,14 @@ stages
 				}
 			}
 	}
-	stage('S3-Upload')
-	{
-		steps{
+	// stage('S3-Upload')
+	// {
+	// 	steps{
 				
-				s3Upload consoleLogLevel: 'INFO', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'CSCGroupAsiaEAR/target/CSCGroupAsiaEAR/*.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'MBRDATA/target/*.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'CSCSmart400Batch/target/*.zip', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'integral-common-modules/integral-batch-rs/target/integral-batch-rs.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'report.zip', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'integral-S3', userMetadata: []
+	// 			s3Upload consoleLogLevel: 'INFO', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'CSCGroupAsiaEAR/target/CSCGroupAsiaEAR/*.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'MBRDATA/target/*.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'CSCSmart400Batch/target/*.zip', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'integral-common-modules/integral-batch-rs/target/integral-batch-rs.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false], [bucket: "${TargetDir}", excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: true, selectedRegion: 'ap-southeast-1', showDirectlyInBrowser: false, sourceFile: 'report.zip', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'integral-S3', userMetadata: []
 				
-			}
-	}
+	// 		}
+	// }
 	stage('Deploy')
 	{
 		steps{
@@ -117,41 +117,41 @@ stages
 	
 }
 	 
-post{
-	always{
+// post{
+// 	always{
 			
-						emailext attachLog: true, body: '''
+// 						emailext attachLog: true, body: '''
 
-Environment Details:
+// Environment Details:
 
-Reg R21.2 integral-Group
-Repo: https://github.dxc.com/insurance/integral-Group.git/
-Branch: RL21.2
-Build No: $BUILD_NUMBER  
-Status:  $BUILD_STATUS! 
+// Reg R21.2 integral-Group
+// Repo: https://github.dxc.com/insurance/integral-Group.git/
+// Branch: RL21.2
+// Build No: $BUILD_NUMBER  
+// Status:  $BUILD_STATUS! 
 
-S3 Bucket:  base-release/Group/R21.2/Latest
-
-
-Code Change Details:
-
-${CHANGES}
+// S3 Bucket:  base-release/Group/R21.2/Latest
 
 
-*** This is an automatically generated email, please do not reply ***        
+// Code Change Details:
 
-Regards,
-
-DevOps Team''', subject: '$PROJECT_NAME-#$BUILD_NUMBER-$BUILD_STATUS!', to: 'vdangi@dxc.com, svankayalap2@dxc.com'
+// ${CHANGES}
 
 
+// *** This is an automatically generated email, please do not reply ***        
+
+// Regards,
+
+// DevOps Team''', subject: '$PROJECT_NAME-#$BUILD_NUMBER-$BUILD_STATUS!', to: 'vdangi@dxc.com, svankayalap2@dxc.com'
 
 
 
-	cleanWs()
+
+
+// 	cleanWs()
 			
 			
-		  }
-	}
+// 		  }
+// 	}
 
 }
