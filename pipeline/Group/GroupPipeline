@@ -14,7 +14,7 @@ tools {
 environment {
     Version="R21.2"
 	Branch="RL21.2"
-    CredentialID="machchitai"
+    CredentialID="machchitai@gmail.com"
 	TargetDir="base-release/Group/R21.2/Latest"
 	}
 	
