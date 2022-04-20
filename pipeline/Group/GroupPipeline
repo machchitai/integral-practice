@@ -14,7 +14,7 @@ tools {
 environment {
     Version="R21.2"
 	Branch="RL21.2"
-    CredentialID="machchitai@gmail.com"
+    CredentialID="84737477-d4b4-430c-b041-8d3fa7080f3a"
 	TargetDir="base-release/Group/R21.2/Latest"
 	}
 	
@@ -32,47 +32,47 @@ stages
 				  }
 			}
 	}
-	// stage('checkout')
-	// {
-	// 	steps{
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Libs']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-Libs.git']]])
+	stage('checkout')
+	{
+		steps{
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'Libs']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-Libs.git']]])
 
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCDiaryApp']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCDiaryApp.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCDiaryApp']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCDiaryApp.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCFsuApp']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCFsuApp.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCFsuApp']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCFsuApp.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'IntegralAdminFramework']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-IntegralAdminFramework.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'IntegralAdminFramework']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-IntegralAdminFramework.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/resources/com/bundle/common']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-bundle.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/resources/com/bundle/common']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-bundle.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/webapp/diary']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-diary.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/webapp/diary']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-diary.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/webapp/fsu']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCFsuweb.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/webapp/fsu']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCFsuweb.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/webapp/smart']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-smart.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/webapp/smart']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-smart.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaApp/src/main/java/com/csc/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-app.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaApp/src/main/java/com/csc/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-app.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaApp/src/main/resources/com/csc/groupasia']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-spring-config.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaApp/src/main/resources/com/csc/groupasia']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-spring-config.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaApp/src/main/resources/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-screen-xml.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaApp/src/main/resources/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-screen-xml.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: ' CSCGroupAsiaWeb/src/main/webapp/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-web.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: ' CSCGroupAsiaWeb/src/main/webapp/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-web.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/resources/com/bundle/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-bundle.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCGroupAsiaWeb/src/main/resources/com/bundle/group']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-group-bundle.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ReportOut/SpoolingPrint/ENGLISH/pdfTemplate/common']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-common-report.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ReportOut/SpoolingPrint/ENGLISH/pdfTemplate/common']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-common-report.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCIntegralExtension']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCIntegralExtension.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CSCIntegralExtension']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-CSCIntegralExtension.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'integral-common-modules']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-common-modules.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'integral-common-modules']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-common-modules.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CheckoutOption', timeout: 90], [$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false, timeout: 90], [$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', timeout: 90, trackingSubmodules: true]], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-Group.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CheckoutOption', timeout: 90], [$class: 'CloneOption', depth: 0, noTags: false, reference: '', shallow: false, timeout: 90], [$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', timeout: 90, trackingSubmodules: true]], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-Group.git']]])
 				
-	// 			checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'integral-common-documentation']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-common-documentation.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: "$Branch"]], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'integral-common-documentation']], gitTool: 'Default', submoduleCfg: [], userRemoteConfigs: [[credentialsId: "$CredentialID", url: 'https://github.dxc.com/insurance/integral-common-documentation.git']]])
 				
-	// 			}
-	// }
+				}
+	}
 	stage('Build')
 	{
 		steps{
