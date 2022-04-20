@@ -37,7 +37,7 @@ stages
 	{
 		steps{
 			script{
-					sh 'mvn -P Group clean install -Dversion=${Version}'
+					sh 'mvn -P clean install -Dversion=${Version}'
 					
 					sh '''mv MBRDATA/target/*.war MBRDATA/target/MBRDATA.war
 
