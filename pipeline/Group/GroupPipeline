@@ -8,8 +8,8 @@ options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '15', daysToKeepStr: '15', numToKeepStr: '15')
 		}
 tools {
-  maven 'maven'
-  jdk 'jdk-1.8'
+  maven 'maven354'
+  jdk 'jdk 1.8'
 	  }
 environment {
     Version="R21.2"
